@@ -1,3 +1,8 @@
+[![CI](https://github.com/tony921023/deepfake-watermark/actions/workflows/python-ci.yml/badge.svg)](https://github.com/tony921023/deepfake-watermark/actions/workflows/python-ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
+# Deepfake 防護、偵測與還原系統
+
 # Deepfake 防護、偵測與還原系統
 
 將影像處理 / 模型推論流程 **API 化**：
@@ -19,8 +24,20 @@ python app.py  # 啟動 Flask API
 
 ## API 範例
 ```bash
-curl -X POST http://127.0.0.1:5000/api/reveal   -F "file=@tests/images/container.png"
-```
+# 健康檢查
+curl http://127.0.0.1:5000/health
+
+# 任意 png/jpg 路徑都可以
+IMG="<你的圖片完整路徑>.png"
+
+# 嵌入
+curl -X POST http://127.0.0.1:5000/api/embed  -F "file=@$IMG"
+
+# 偵測
+curl -X POST http://127.0.0.1:5000/api/detect -F "file=@$IMG"
+
+# 還原
+curl -X POST http://127.0.0.1:5000/api/reveal -F "file=@$IMG"
 
 ## Roadmap
 - [ ] 加入 Swagger (flask-swagger-ui) 或 ReDoc
