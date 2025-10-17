@@ -1,0 +1,67 @@
+{
+  "info": {
+    "name": "deepfake-watermark API",
+    "_postman_id": "abcd-efgh",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "health",
+      "request": {
+        "method": "GET",
+        "url": "http://127.0.0.1:5000/health"
+      }
+    },
+    {
+      "name": "embed",
+      "request": {
+        "method": "POST",
+        "url": "http://127.0.0.1:5000/api/embed",
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "detect",
+      "request": {
+        "method": "POST",
+        "url": "http://127.0.0.1:5000/api/detect",
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": ""
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "reveal",
+      "request": {
+        "method": "POST",
+        "url": "http://127.0.0.1:5000/api/reveal",
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": ""
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
