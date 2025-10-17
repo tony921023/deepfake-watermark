@@ -3,8 +3,6 @@
 
 # Deepfake 防護、偵測與還原系統
 
-# Deepfake 防護、偵測與還原系統
-
 將影像處理 / 模型推論流程 **API 化**：
 1) `/api/embed`：嵌入浮水印（容器影像）
 2) `/api/detect`：偵測竄改與風險分數
@@ -38,6 +36,21 @@ curl -X POST http://127.0.0.1:5000/api/detect -F "file=@$IMG"
 
 # 還原
 curl -X POST http://127.0.0.1:5000/api/reveal -F "file=@$IMG"
+
+## 加一段「如何跑測試」
+```markdown
+## 測試
+```bash
+python -m unittest -q
+# 或者（CI 會嘗試）
+# python -m pytest -q
+
+## Postman（給面試官更快測）
+```markdown
+## Postman
+- Repo 根目錄已有 `postman_collection.json`
+- 在 Postman：File → Import → 選這個檔，直接有三個請求可測
+
 
 ## Roadmap
 - [ ] 加入 Swagger (flask-swagger-ui) 或 ReDoc
